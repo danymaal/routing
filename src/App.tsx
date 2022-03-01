@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import './index.scss';
 import About from './pages/About';
 import ContactUs from './pages/ContactUs';
@@ -11,32 +12,15 @@ import Sidney from './pages/Sidney';
 function App() {
   return (
     <Router>
-      <nav className="nav-bar">
-        <ul className="nav-bar__list">
-          <li>
-            <Link to="/" className="nav-bar__list-el">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="nav-bar__list-el">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="nav-bar__list-el">
-              Contact Us
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<ContactUs />}>
-          <Route path="john" element={<John />} />
-          <Route path="sidney" element={<Sidney />} />
+        <Route path="/contact/*" element={<ContactUs />}>
+          <Route path="sydney" element={<Sidney />} />
         </Route>
+        {/* Если нам нужно чтобы контент одного компонента показывался в другом когда мы переходим по 3000/см/см то нам нужно использовать nesting routes. Если мы хотим, чтобы открывалась другая страница то используем раутс без нестинга */}
+        <Route path="contact/john" element={<John />} />
         <Route path="*" element={<EPage />} />
       </Routes>
       <div className="footer">
