@@ -4,6 +4,7 @@ body {
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #042825;
 }
 
 code {
@@ -51,9 +52,29 @@ code {
 }
 
 .contact__button {
-    background:#fff;
-    border: 1px solid black;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 10px;
+  background: #fff;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.active {
+  color: white;
+  border-bottom: 1px solid #fff;
+  text-decoration: none;
+}
+
+.non-active {
+  color: #fff;
+  text-decoration: none;
+}
+
+.home-heading {
+  color: #fff;
+}
+
+.home-wrapper {
+  width: 1403px;
+  margin: 0 auto;
 }
